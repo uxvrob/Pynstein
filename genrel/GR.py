@@ -4,7 +4,7 @@ David Clark, Kai Smith
 Case Western Reserve University
 2014
 """
-
+#%%
 import numpy as np
 import sympy as sp
 
@@ -159,7 +159,7 @@ def inverse_perturbations(metric, pert):
 #First index corresponds to upper index
 def perturbed_christoffel_symbols(metric, metric_key, perturbations, christoffel=None):
     perturbed_symbols = tensor(3)
-    symbols = christoffel_symbols(metric, metric_key) if christoffel == None else christoffel
+    symbols = christoffel_symbols(metric, metric_key) if christoffel.all() == None else christoffel
     inverse = inverse_metric(metric)
     for mu in range(4):
         for nu in range(4):
@@ -205,7 +205,8 @@ def perturbed_source_tensor(metric, stress_energy, perturbed_stress_energy, pert
             perturbed_source[mu][nu] = perturbed_stress_energy[mu][nu]
             -sp.Rational(1,2)*metric[mu][nu]*perturbed_stress_energy_trace
             -sp.Rational(1,2)*perturbations[mu][nu]*stress_energy_trace
-    return sp.simplify(perturbed_source)
+    return perturbed_source
+    #return sp.simplify(perturbed_source)
 
 def perturbed_einstein_equations(perturbed_ricci_tesor, perturbed_source_tesor):
     equations = []
