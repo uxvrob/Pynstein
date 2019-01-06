@@ -6,14 +6,14 @@ Pynstein is a python library that allows the user to easily do general relativit
 ##Features
 
 * Given a metric, Pynstein can calculate:
-  * Inerse metrics
+  * Inverse metrics
   * Christoffel Symbols
   * Reimann Curvature Tensor
   * Ricci Curvature Tensor
   * Conservation equation
   * Einstein Tensor
   * and given the stress energy tensor, the Einstein Equations
-* Can numerically evolve a universe given inital conditions
+* Can numerically evolve a universe given initial conditions
 
 ##Dependencies
 * numpy

@@ -206,7 +206,6 @@ def perturbed_source_tensor(metric, stress_energy, perturbed_stress_energy, pert
             -sp.Rational(1,2)*metric[mu][nu]*perturbed_stress_energy_trace
             -sp.Rational(1,2)*perturbations[mu][nu]*stress_energy_trace
     return perturbed_source
-    #return sp.simplify(perturbed_source)
 
 def perturbed_einstein_equations(perturbed_ricci_tesor, perturbed_source_tesor):
     equations = []
